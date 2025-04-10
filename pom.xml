@@ -92,7 +92,13 @@
 			<artifactId>spring-cloud-open-service-broker-core</artifactId>
 			<version>3.1.2.RELEASE</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/com.unboundid/unboundid-ldapsdk -->
+		<dependency>
+			<groupId>com.unboundid</groupId>
+			<artifactId>unboundid-ldapsdk</artifactId>
+			<version>7.0.2</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
