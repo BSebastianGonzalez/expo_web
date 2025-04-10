@@ -1,0 +1,36 @@
+@baseUrl = http://localhost:8080/api
+@json = application/json
+
+### Servicios disponibles
+GET {{baseUrl}}/servicios
+Accept: {{json}}
+
+### Obtener todos los usuarios
+GET {{baseUrl}}/usuarios
+Accept: {{json}}
+
+### Obtener usuario por ID
+GET {{baseUrl}}/1
+Accept: {{json}}
+
+### Crear un nuevo usuario
+POST {{baseUrl}}
+Content-Type: {{json}}
+
+{
+  "nombre": "Juan Pérez",
+  "email": "juan@example.com",
+}
+
+### Actualizar usuario por ID
+PUT {{baseUrl}}/1
+Content-Type: {{json}}
+
+{
+  "nombre": "Juan Actualizado",
+  "email": "nuevo@example.com",
+}
+
+### Eliminar usuario por ID
+DELETE {{baseUrl}}/3
+Accept: */*

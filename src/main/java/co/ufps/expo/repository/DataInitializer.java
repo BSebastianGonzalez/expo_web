@@ -17,7 +17,6 @@ public class DataInitializer {
     @Bean
     public CommandLineRunner initData() {
         return args -> {
-            // Crear algunos usuarios de ejemplo
             Usuario usuario1 = new Usuario(null, "Usuario 1", "usuario1@example.com");
             Usuario usuario2 = new Usuario(null, "Usuario 2", "usuario2@example.com");
 

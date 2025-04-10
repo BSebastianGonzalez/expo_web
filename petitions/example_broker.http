@@ -1,0 +1,39 @@
+@baseUrl = http://localhost:8080
+@instanceId = {{instanceId}}
+@key = {{key}}
+@value = {{value}}
+@bindingId = {{bindingId}}
+
+### 1. Crear una nueva instancia de almacenamiento
+POST {{baseUrl}}/storage/instances
+Accept: application/json
+
+
+### 2. Guardar datos en la instancia creada
+POST {{baseUrl}}/storage/{{instanceId}}?key={{key}}&value={{value}}
+Accept: application/json
+
+
+### 3. Guardar otro dato
+POST {{baseUrl}}/storage/{{instanceId}}?key={{key}}&value={{value}}
+Accept: application/json
+
+
+### 4. Recuperar un dato almacenado
+GET {{baseUrl}}/storage/c9105a67-b856-4432-8e77-6d9b4f4b5350/prueba
+Accept: application/json
+
+
+### 5. Crear un binding (simulación del Open Service Broker)
+POST {{baseUrl}}/storage/instances/{{instanceId}}/bindings
+Accept: application/json
+
+
+### 6. Eliminar el binding
+DELETE {{baseUrl}}/storage/instances/{{instanceId}}/bindings/{{bindingId}}
+Accept: application/json
+
+
+### 7. Eliminar la instancia
+DELETE {{baseUrl}}/storage/instances/{{instanceId}}
+Accept: application/json
