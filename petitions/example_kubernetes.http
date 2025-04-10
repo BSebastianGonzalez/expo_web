@@ -1,0 +1,14 @@
+### Obtener ConfigMap simulado
+GET http://localhost:8080/kubernetes/config
+Accept: application/json
+
+
+### Obtener Secrets simulados (enmascarados)
+GET http://localhost:8080/kubernetes/secrets
+Accept: application/json
+
+
+### Obtener información del entorno Kubernetes simulado
+GET http://localhost:8080/kubernetes/info
+Accept: application/json
+
