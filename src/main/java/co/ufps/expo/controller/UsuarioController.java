@@ -30,18 +30,6 @@ public class UsuarioController {
         return response;
     }
 
-    @GetMapping("/servicios")
-    public Map<String, String> getServicios() {
-        Map<String, String> servicios = new HashMap<>();
-        servicios.put("Spring Data JPA", "Permite interactuar con la base de datos mediante entidades y repositorios");
-        servicios.put("Spring Cloud Task", "Ejecuta tareas cortas automáticamente al iniciar la aplicación");
-        servicios.put("Spring Cloud Config", "Provee configuración externa centralizada desde un servidor");
-        servicios.put("Spring LDAP", "Permite autenticación y búsqueda de usuarios a través de un servidor LDAP");
-        servicios.put("Spring Cloud Kubernetes", "Integra la app con Kubernetes para leer ConfigMaps y controlar despliegues");
-        servicios.put("Spring Cloud Open Service Broker", "Expone esta app como un broker de servicios compatible con Open Service Broker API");
-        servicios.put("Spring Cloud Skipper", "Permite gestionar versiones y actualizaciones de aplicaciones de manera controlada");
-        return servicios;
-    }
 
     //Endpoints Spring Data JPA
     @GetMapping("/usuarios")
@@ -94,12 +82,17 @@ public class UsuarioController {
     }
 
     //Endpoint Spring Cloud Open Service Broker
-    @GetMapping("/broker")
-    public Map<String, String> getBrokerInfo() {
-        Map<String, String> info = new HashMap<>();
-        info.put("servicio", "demo-service");
-        info.put("plan", "free");
-        return info;
+    @GetMapping("/servicios")
+    public Map<String, String> getServicios() {
+        Map<String, String> servicios = new HashMap<>();
+        servicios.put("Spring Data JPA", "/api/usuarios");
+        servicios.put("Spring Cloud Task", "/task/stats");
+        servicios.put("Spring Cloud Config", "/config");
+        servicios.put("Spring LDAP", "/api/ldap/authenticate?username=user1&password=password1");
+        servicios.put("Spring Cloud Kubernetes", "/kubernetes/config");
+        servicios.put("Spring Cloud Open Service Broker", "/storage/instances");
+        servicios.put("Spring Cloud Skipper", "/skipper/apps/{appName}/versions");
+        return servicios;
     }
 
     // Endpoint Spring Cloud Skipper

@@ -1,0 +1,3 @@
+### Configuración del cliente desde Spring Cloud Config
+GET http://localhost:8080/config
+Accept: application/json
